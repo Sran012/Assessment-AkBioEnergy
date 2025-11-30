@@ -1,29 +1,7 @@
-// Hero.tsx
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import image1 from "../assets/760e8b9be82b9b0effa5f84dfa840195.jpeg";
-import image2 from "../assets/5ac6338c6467f91a5ad46ff49c375ae7.png";
-import image3 from "../assets/f3cc8a62c0c383f585d6779550d533de.png";
-
-const slides = [
-  {
-    image: image1,
-    title: "Sustainable Industrial Power",
-    subtitle: "Eco-friendly alternatives to fossil fuels",
-    
-  },
-  {
-    image: image2,
-    title: "Fueling Industries, Sustaining Tomorrow",
-    subtitle: "High-quality biomass pellets for burners & boilers",
-  },
-  {
-    image: image3,
-    title: "Renewable Energy Solutions",
-    subtitle: "Carbon-neutral fuel for a cleaner future",
-  },
-];
-
+import { Home, Info, Box, Mail } from "lucide-react";
+import { slides } from "@/data/data";
 
 export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -37,7 +15,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div id="Home" className="relative w-full h-screen overflow-hidden">
       <AnimatePresence>
         {slides.map((slide, index) => {
           return (
@@ -62,7 +40,7 @@ export default function Hero() {
                 >
                   <h1 className="text-4xl md:text-5xl font-bold mb-3">{slide.title}</h1>
                   <p className="text-lg md:text-xl">{slide.subtitle}</p>
-                  <button className="bg-green-700 p-3 rounded-xl mt-6">Contact Us </button>
+                  <button className="bg-green-600 p-3 rounded-xl mt-6">Contact Us </button>
                 </motion.div>
               </motion.div>
             )
@@ -80,6 +58,17 @@ export default function Hero() {
           ></div>
         ))}
       </div>
+
+        <div className="md:hidden fixed bottom-0 w-full bg-white h-14 z-20">
+          <div className="overflow-hidden flex justify-around items-center h-full">
+            <a href="#Home"><Home className="w-4 h-4"/></a>
+            <a href="#AboutOrg"><Info className="w-4 h-4"/></a>
+            <a href="#Products"><Box className="w-4 h-4"/></a>
+            <a href="#ContactUs"><Mail className="w-4 h-4"/></a>    
+          </div>
+        </div>
+
+
     </div>
   );
 }

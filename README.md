@@ -1,73 +1,55 @@
-# React + TypeScript + Vite
+# Assessment - AkBioEnergy
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A landing page made by me as an assessment task.
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is created using:
 
-## React Compiler
+1. **TypeScript 5.9**: A strongly typed programming language that builds on JavaScript.
+2. **React 19.2**: A JavaScript library for building user interfaces.
+3. **TailwindCSS 4.1**: A utility-first CSS framework for styling.
+4. **Shadcn**: A component library for building modern UIs.
+5. **lucide-icons**: A library of beautiful and customizable icons.
+6. **Framer Motion**: A library for creating animations and transitions.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Project Structure
 
-## Expanding the ESLint configuration
+The project is organized as follows:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Key Directories and Files
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **`src/`**: Contains the main application code.
+  - **`App.tsx`**: The root component of the application.
+  - **`components/`**: Contains reusable UI components like `Navbar`, `Footer`, and `Hero`.
+  - **`assets/`**: Stores static assets such as images.
+  - **`lib/utils.ts`**: Utility functions used across the application.
+  - **`data/data.tsx`**: Have all data globally used.
+- **`public/`**: Contains public assets like the logo.
+- **`vite.config.ts`**: Configuration file for Vite.
+- **`package.json`**: Defines project dependencies and scripts.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Prerequisites
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Make sure you have the following installed:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- [Node.js](https://nodejs.org/) (v16 or higher recommended)
+- [pnpm](https://pnpm.io/) (v7 or higher)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Getting Started
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. Clone the repository:
+
+   ```sh
+   git clone https://github.com/Sran012/Assessment-AkBioEnergy.git
+   cd Assessment-AkBioEnergy
+
+2. Install dependencies: 
+
+  ```sh 
+    pnpm install
+  ```
+3. Start dev server: 
+
+```sh 
+pnpm dev
