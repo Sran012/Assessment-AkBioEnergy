@@ -79,7 +79,7 @@ export const products : productType[] = [
 
 
 type cardType = {
-    icon: React.ComponentType<any>;
+    icon: React.ComponentType<{ className?: string }>;
     title: string;
     description: string;
     showCheck: boolean;
@@ -121,8 +121,7 @@ interface Titles {
 }
 
 export const titles: Titles[] = [
-    { title: "High Energy Efficiency", desc: "Reliable heat for industrial applications with consistent burning properties", icon: <Flame /> },
+    { title: "High Energy Efficiency", desc: "Reliable heat for industrial applications with burning properties", icon: <Flame /> },
     { title: "Green & Eco-Friendly Fuel", desc: "A cleaner alternative to coal with significantly reduced carbon emissions", icon: <Leaf /> },
     { title: "Cost Effective Energy", desc: "Consistent supply and stable pricing for better budget planning", icon: <DollarSign /> },
 ]
-

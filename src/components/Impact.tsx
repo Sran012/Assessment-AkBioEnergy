@@ -2,7 +2,7 @@ import { TrendingDown, Wind, Leaf } from 'lucide-react';
 
 export default function Impact() {
   return (
-    <div className="bg-green-700 flex items-center justify-center p-8">
+    <div className="bg-primary flex items-center justify-center p-8">
       <div className="w-full max-w-7xl">
 
         <div className="text-center mb-12">
@@ -17,7 +17,7 @@ export default function Impact() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
 
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 transition-transform duration-300 ease-out hover:scale-110 cursor-pointer flex flex-col items-center text-center shadow-lg hover:shadow-2xl">
-            <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-6">
+            <div className="w-16 h-16 bg-primary-foreground/20 rounded-full flex items-center justify-center mb-6">
               <TrendingDown className="w-8 h-8 text-white" />
             </div>
             <h2 className="text-5xl font-bold text-white mb-4">80-90%</h2>
@@ -27,7 +27,7 @@ export default function Impact() {
           </div>
 
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 transition-transform duration-300 ease-out hover:scale-110 cursor-pointer flex flex-col items-center text-center shadow-lg hover:shadow-2xl">
-            <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-6">
+            <div className="w-16 h-16 bg-primary-foreground/20 rounded-full flex items-center justify-center mb-6">
               <Wind className="w-8 h-8 text-white" />
             </div>
             <h2 className="text-5xl font-bold text-white mb-4">40-80%</h2>
@@ -37,7 +37,7 @@ export default function Impact() {
           </div>
 
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 transition-transform duration-300 ease-out hover:scale-110 cursor-pointer flex flex-col items-center text-center shadow-lg hover:shadow-2xl">
-            <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-6">
+            <div className="w-16 h-16 bg-primary-foreground/20 rounded-full flex items-center justify-center mb-6">
               <Leaf className="w-8 h-8 text-white" />
             </div>
             <h2 className="text-5xl font-bold text-white mb-4">100%</h2>

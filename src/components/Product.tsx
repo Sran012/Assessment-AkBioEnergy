@@ -15,7 +15,7 @@ const ProductCard = ({ image, title, description, tag, tagIcon }: ProductCardPro
 
   return (
     <div 
-      className="relative bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:-translate-y-1"
+      className="relative bg-card rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:-translate-y-1"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -28,7 +28,7 @@ const ProductCard = ({ image, title, description, tag, tagIcon }: ProductCardPro
         />
         
         <div 
-          className="absolute top-4 right-4 bg-green-600 rounded-full p-3 transition-all duration-300"
+          className="absolute top-4 right-4 bg-primary text-primary-foreground rounded-full p-3 transition-all duration-300"
           style={{
             opacity: isHovered ? 1 : 0,
             transform: isHovered ? 'translateY(0) rotate(0deg)' : 'translateY(-20px) rotate(-180deg)'
@@ -39,12 +39,12 @@ const ProductCard = ({ image, title, description, tag, tagIcon }: ProductCardPro
       </div>
 
       <div className="p-6">
-        <h3 className="text-2xl font-bold text-gray-800 mb-3">{title}</h3>
-        <p className="text-gray-600 mb-4">{description}</p>
+        <h3 className="text-2xl font-bold text-foreground mb-3 font-heading">{title}</h3>
+        <p className="text-muted-foreground mb-4 font-body">{description}</p>
         
         {tag && (
           <div 
-            className="flex items-center gap-2 text-green-600 font-semibold transition-all duration-300"
+            className="flex items-center gap-2 text-primary font-semibold transition-all duration-300"
             style={{
               opacity: isHovered ? 1 : 0,
               transform: isHovered ? 'translateY(0)' : 'translateY(10px)'
@@ -61,13 +61,13 @@ const ProductCard = ({ image, title, description, tag, tagIcon }: ProductCardPro
 
 export function Product() {
   return (
-    <div id="Products" className="bg-linear-to-b from-gray-50 to-gray-100 py-16 px-4">
+    <div id="Products" className="bg-linear-to-b from-accent to-accent/80 py-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-5xl font-bold text-foreground mb-4 font-heading">
             Our Product Range
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-body">
             At AK Bio Energy, we trade and supply high-quality biomass pellets from various agricultural and woody residues
           </p>
         </div>
