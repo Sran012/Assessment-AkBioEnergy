@@ -20,11 +20,13 @@ export function Contact({
   const [values, setValues] = useState({
     name: "",
     email: "",
+    phone: "",
     message: "",
   })
   const [errors, setErrors] = useState({
     name: "",
     email: "",
+    phone: "",
     message: ""
   })
 
@@ -38,6 +40,7 @@ export function Contact({
     const nextErrors = {
       name: "",
       email: "",
+      phone: "",
       message: ""
     }
     
@@ -52,12 +55,16 @@ export function Contact({
       nextErrors.email = "Please enter a valid email."
     }
 
+    if(!values.phone.trim() || values.phone.trim().length < 10) {
+      nextErrors.phone = "Please enter a valid phone number."
+    }
+
     if (!values.message.trim() || values.message.trim().length < 10) {
       nextErrors.message = "Please enter at least 10 characters."
     }
 
     setErrors(nextErrors)
-    return !nextErrors.name && !nextErrors.email && !nextErrors.message
+    return !nextErrors.name && !nextErrors.email && !nextErrors.phone && !nextErrors.message
   }
 
   async function handleSubmit(e: React.ChangeEvent<HTMLFormElement>) {
@@ -75,8 +82,8 @@ export function Contact({
         description: "Thanks! We'll reply to you soon.",
       })
 
-      setValues({ name: "", email: "", message: "" })
-    } catch (err) {
+      setValues({ name: "", email: "", phone: "", message: "" })
+    } catch {
       toast.error("Something went wrong", {
         description: "Please try again in a moment.",
       })
@@ -144,13 +151,34 @@ export function Contact({
             </div>
 
             <div className="grid gap-2">
+              <Label htmlFor="phone">
+                Phone <span className="sr-only">(required)</span>
+              </Label>
+              <Input
+                id="phone"
+                name="phone"
+                placeholder="9711753499"
+                value={values.phone}
+                onChange={handleChange}
+                required
+                aria-invalid={Boolean(errors.phone)}
+                aria-describedby={errors.phone ? "phone-error" : undefined}
+              />
+              {errors.phone && (
+                <p id="phone-error" className="text-sm text-destructive">
+                  {errors.phone}
+                </p>
+              )}
+            </div>
+
+            <div className="grid gap-2">
               <Label htmlFor="message">
                 Message <span className="sr-only">(required)</span>
               </Label>
               <Textarea
                 id="message"
                 name="message"
-                placeholder="How can we help?"
+                placeholder="Tell us about your biomass pallet requirement"
                 value={values.message}
                 onChange={handleChange}
                 required
@@ -166,7 +194,7 @@ export function Contact({
             </div>
 
             <div className="pt-2">
-              <Button type="submit" disabled={isSubmitting} className="w-full md:w-auto bg-green-600 hover:bg-green-700">
+              <Button type="submit" disabled={isSubmitting} className="w-full md:w-auto">
                 {isSubmitting ? "Sending…" : "Send Message"}
               </Button>
             </div>
@@ -176,4 +204,3 @@ export function Contact({
     </section>
   )
 }
-
