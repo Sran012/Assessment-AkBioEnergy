@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Home, Info, Box, Mail } from "lucide-react";
+import { Home, Info, Box, Mail,Phone } from "lucide-react";
 import { slides } from "@/data/data";
+import { Button } from "./ui/button";
 
 export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -32,15 +33,15 @@ export default function Hero() {
 
                 <div className="absolute inset-0 bg-black/50"></div>
                 <motion.div
-                  className="absolute left-10 top-1/2 transform -translate-y-1/2 text-white max-w-lg"
-                  initial={{ opacity: 0, y: 50 }}
+                  className="absolute left-2 md:left-10 top-1/2 transform -translate-y-1/2 text-white max-w-2xl"
+                  initial={{ opacity: 0, y: 120 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 50 }}
-                  transition={{ duration: 1.0, delay: 0.3 }}
+                  exit={{ opacity: 0, y: 0 }}
+                  transition={{ duration: 1.2, delay: 0.4 }}
                 >
-                  <h1 className="text-4xl md:text-5xl font-bold mb-3">{slide.title}</h1>
-                  <p className="text-lg md:text-xl">{slide.subtitle}</p>
-                  <button className="bg-green-600 p-3 rounded-xl mt-6">Contact Us </button>
+                  <h1 className="text-5xl md:text-7xl font-bold mb-3 font-heading">{slide.title}</h1>
+                  <p className="text-2xl md:text-xl font-body">{slide.subtitle}</p>
+                  <Button className="bg-primary text-primary-foreground hover:bg-primary/90 p-6 rounded-xl mt-6 text-xl">Contact Us <Phone/> </Button>
                 </motion.div>
               </motion.div>
             )
@@ -53,18 +54,18 @@ export default function Hero() {
           <div
             key={i}
             className={`w-3 h-3 rounded-full transition-all ${
-              currentIndex === i ? "bg-white scale-125" : "bg-gray-400"
+              currentIndex === i ? "bg-white scale-120" : "bg-gray-400"
             }`}
           ></div>
         ))}
       </div>
 
-        <div className="md:hidden fixed bottom-0 w-full bg-white h-14 z-20">
+        <div className="md:hidden fixed bottom-0 w-full bg-white h-16 z-20 shadow-top">
           <div className="overflow-hidden flex justify-around items-center h-full">
-            <a href="#Home"><Home className="w-4 h-4"/></a>
-            <a href="#AboutOrg"><Info className="w-4 h-4"/></a>
-            <a href="#Products"><Box className="w-4 h-4"/></a>
-            <a href="#ContactUs"><Mail className="w-4 h-4"/></a>    
+            <a href="#Home"><Home className="w-6 h-6"/></a>
+            <a href="#AboutOrg"><Info className="w-6 h-6"/></a>
+            <a href="#Products"><Box className="w-6 h-6"/></a>
+            <a href="#ContactUs"><Mail className="w-6 h-6"/></a>    
           </div>
         </div>
 
